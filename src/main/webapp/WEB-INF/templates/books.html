@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head th:replace="fragments/header :: header"></head>
+<body>
+    <div th:replace="fragments/action :: action"></div>
+
+    <div th:switch="${not #lists.isEmpty(books)}">
+        <div th:case="true" >
+            <table>
+                <tr>
+                    <th>Title</th>
+                    <th>Author</th>
+                    <th>ISBN</th>
+                    <th>Published Date</th>
+                    <th>Price</th>
+                    <th>View</th>
+                    <th>Edit</th>
+                    <th>Delete</th>
+                </tr>
+                <tr th:each="book : ${books}">
+                    <td th:text="${book.title}"></td>
+                    <td th:text="${book.author}"></td>
+                    <td th:text="${book.isbn}"></td>
+                    <td th:text="${book.published_date}"></td>
+                    <td th:text="${book.price}"></td>
+                    <td><a th:href="@{'/books/' + ${book.id}}">View</a></td>
+                    <td><a th:href="@{'/books/' + ${book.id} + '/edit'}">Edit</a></td>
+                    <td><a th:href="@{'/books/' + ${book.id} + '/delete'}">Delete</a></td>
+                </tr>
+            </table>
+        </div>
+        <div th:case="false">
+            <h1>No Books</h1>
+        </div>
+    </div>
+
+    <div>
+        <a th:href="@{'/books/add'}">Add Book</a>
+    </div>
+</body>
+</html>
