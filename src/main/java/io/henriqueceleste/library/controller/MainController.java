@@ -5,6 +5,7 @@ import org.springframework.core.io.ClassPathResource;
 import org.springframework.jdbc.datasource.init.ResourceDatabasePopulator;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
+import org.springframework.web.bind.annotation.RequestMethod;
 
 import javax.sql.DataSource;
 import java.sql.Connection;
@@ -16,20 +17,8 @@ public class MainController {
     @Autowired
     private DataSource dataSource;
 
-    @RequestMapping("/")
+    @RequestMapping(method = RequestMethod.GET, path = {"/", ""})
     public String home() {
-        generateDatabaseSchema();
         return "redirect:/books";
-    }
-
-    private void generateDatabaseSchema() {
-        ResourceDatabasePopulator populator = new ResourceDatabasePopulator();
-        populator.addScript(new ClassPathResource("db/test-data.sql"));
-
-        try (Connection conn = dataSource.getConnection()) {
-            populator.populate(conn);
-        } catch (SQLException e) {
-            e.printStackTrace();
-        }
     }
 }
