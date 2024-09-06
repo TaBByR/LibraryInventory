@@ -1,6 +1,6 @@
 # 📚 Library Inventory Management Web App
 
-This is a fullstack, end-to-end Maven Web Application developed in Java with traditional Spring and Hibernate for the backend. Then Thymeleaf, HTML, and CSS for the frontend. This application allows you to manage an inventory of books by viewing a list of them and managing individual ones (add, edit, delete). It also exposes a RESTful API for CRUD operations on the library inventory through the `/api/` endpoint. The application is deployed in Docker.
+This is a fullstack, end-to-end Maven Web Application developed in Java with traditional Spring and Hibernate for the backend. Then Thymeleaf, HTML, and CSS(Bootstrap) for the frontend. This application allows you to manage an inventory of books by viewing a list of them and managing individual ones (add, edit, delete). It also exposes a RESTful API for CRUD operations on the library inventory through the `/api/` endpoint. The application is deployed in Docker.
 
 ## 🛠️ Technologies Used
 <div style="display: flex; flex-wrap: wrap; gap: 10px;">
@@ -14,6 +14,7 @@ This is a fullstack, end-to-end Maven Web Application developed in Java with tra
     <img src="https://img.shields.io/badge/Thymeleaf-005F0F?style=flat&logo=thymeleaf&logoColor=white" style="height: 30px;" alt="Thymeleaf"/>
     <img src="https://img.shields.io/badge/IntelliJ_IDEA-000000?style=flat&logo=intellij-idea&logoColor=white" style="height: 30px;" alt="IntelliJ IDEA"/>
     <img src="https://img.shields.io/badge/Docker-2496ED?style=flat&logo=docker&logoColor=white" style="height: 30px;" alt="Docker"/>
+    <img src="https://img.shields.io/badge/Bootstrap-563D7C?style=flat&logo=bootstrap&logoColor=white" style="height: 30px;" alt="Bootstrap"/>
 </div>
 
 ## 🚀 How to Run
